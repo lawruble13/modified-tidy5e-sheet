@@ -1,3 +1,13 @@
+# NOTE
+This is an extension of the Tidy5e Sheet module. Differences are:
+* You can add arbitrary abilities / ability scores to a character
+* You can add arbitrary skills to a character
+* You can change the base ability score for a skill check
+* Items can now add or subtract from the modifier for a skill check while equipped
+* Items can now use hit dice as a resource
+
+As of yet, ALL links, code, licenses, etc. have NOT been changed to reflect that this is a fork of sdenec's Tidy5e module. This will be done shortly.
+
 # Tidy5e Sheet
 An alternative Character Sheet for Foundry VTT dnd5e aimed at creating a cleaner UI.
 
@@ -49,7 +59,7 @@ Inspired by The Favorites Tab and Sky's use for the favorite items and spells th
 Additionally to the default `Biography`Textfield you can enter your character's personality traits, ideals, bonds and flaws aswell as an appearance description. If you use Roll20 Coverter or the DNDBeyond Exporter these fields will be populated by the imported Data. The Journal tab offers additional space for notes separated in 4 predefines text fields. Feel free to change the labels for the left hand fields. These sections are greatly inspired by Sky's alternate 5e sheet and are compatible should you chose to switch from either one.
 
 ### Delete Protection
-When you handle items, skills and spells it might happen that you delete something by accident. There are plugins to enable a delete dialogue but I find it cumbersome for deleting multiple items. I implemented a switch to show/hide the delete button from you charachter's inventory, features and spellbook. The lock ist located on the right side of the filter bar. It will remember your setting even if you refresh. For extra security you might install a delete dialogue plugin as well.
+When you handle items, skills and spells it might happen that you delete something by accident. There are plugins to enable a delete dialogue but I find it cumbersome for deleting multiple items. I implemented a switch to show/hide the delete button from you character's inventory, features and spellbook. The lock ist located on the right side of the filter bar. It will remember your setting even if you refresh. For extra security you might install a delete dialogue plugin as well.
 
 ## Character Sheet Layout Changes
 In general I adjusted font sizes, spacings, colors and icons to better fit the space and appear more coherent. My aim was to make the information as readable and easily navigatable as possible.
