@@ -2,7 +2,7 @@
 	"name": "modified-tidy5e-sheet",
 	"title": "Modified Tidy 5E Sheet",
 	"description": "Replaces the default D&D 5e character sheet with an alternate layout focused on a cleaner UI. Modified so arbitrary skills and abilities can be added.",
-	"version": "0.1.12",
+	"version": "0.1.13",
 	"author": "lawruble13",
 	"minimumCoreVersion": "0.6.0",
 	"compatibleCoreVersion": "0.6.2",

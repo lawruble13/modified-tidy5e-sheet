@@ -220,7 +220,7 @@ export class ModifiedTidy5eSheet extends ActorSheet5eCharacter {
 						label: "Add",
 						callback: async (html) => {
 							let name = html.find('input[name="name"]')[0].value;
-							let abr = name.substr(0,3);
+							let abr = name.substr(0,3).toLowerCase();
 							let s = html.find('select[name="abl"]')[0].value;
 							let k = "data.skills." + abr;
 							let d={};
