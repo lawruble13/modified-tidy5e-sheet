@@ -173,7 +173,7 @@
 			</div>
 
 		</header>
-		
+
 		{{!-- PC Sheet Navigation --}}
 		<nav class="flex tidy5e-navigation tabs" data-group="primary">
 			<a class="item active" data-tab="attributes">{{ localize "DND5E.Attributes" }}</a>
@@ -204,6 +204,11 @@
 						</div>
 					</li>
 					{{/each}}
+					<li class="ability add-ability">
+						<div class="ability-modifiers">
+							<h4 class="new-ability" title="Add Ability">Add Ability</h4>
+						</div>
+					</li>
 				</ul>
 
 				{{!-- Skills --}}
@@ -232,11 +237,11 @@
 									<h4>Restore on rest</h4>
 									<input id="{{../actor._id}}-{{res.name}}.sr" name="data.resources.{{res.name}}.sr" type="checkbox" {{checked res.sr}}>
 									<label for="{{../actor._id}}-{{res.name}}.sr" class="checkbox">
-										{{ localize "DND5E.RestS" }} 
+										{{ localize "DND5E.RestS" }}
 									</label>
 									<input id="{{../actor._id}}-{{res.name}}.lr" name="data.resources.{{res.name}}.lr" type="checkbox" {{checked res.lr}}>
 									<label for="{{../actor._id}}-{{res.name}}.lr" class="checkbox">
-										{{ localize "DND5E.RestL" }} 
+										{{ localize "DND5E.RestL" }}
 									</label>
 								</div>
 							</header>
@@ -251,7 +256,7 @@
 								<input class="res-max" name="data.resources.{{res.name}}.max" type="text" value="{{res.max}}"
 								data-dtype="Number" placeholder="0" maxlength="3">
 							</div>
-							
+
 						</li>
 						{{/each}}
 					</ul>
