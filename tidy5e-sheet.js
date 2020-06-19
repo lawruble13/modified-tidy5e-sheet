@@ -143,13 +143,9 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 				content: `
 				<form id="add-ability" autocomplete="off" onsubmit="event.preventDefault();">
 					<div class="form-group">
-						<label>Long Ability Name</label>
+						<label>Ability Name</label>
 						<input type="text" name="long" placeholder="Long name (e.g. Wisdom)">
-					</div>
-					<div class="form-group">
-						<label>Short Ability Name</label>
-						<input type="text" name="short" placeholder="Short name (e.g. Win)">
-						<p class="notes">Specify the name of the new ability</p>
+						<p class="notes">Enter the name for the new skill. The first three letters are the short form, and must be unique.</p>
 					</div>
 				</form>
 				`,
@@ -158,9 +154,8 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 						icon: '<i class="fas fa-check"></i>',
 						label: "Add",
 						callback: async (html) => {
-							let s = html.find('input[name="short"]')[0].value;
-							s = s.toLowerCase();
 							let l = html.find('input[name="long"]')[0].value;
+							let s = l.substr(0,3).toLowerCase();
 							let k = "data.abilities." + s;
 							let d={};
 							d[k] = {
@@ -193,6 +188,13 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			});
 			d.render(true);
 		});
+
+		html.find('.add-skill').click(async (event) => {
+			console.log("Adding new skill...");
+			let actor = this.actor;
+			console.log(actor);
+			console.log("Done adding new skill.");
+		})
 	}
 }
 
