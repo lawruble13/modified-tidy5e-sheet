@@ -4,7 +4,7 @@
  * @return {Promise}
  */
 
-export const preloadTidy5eHandlebarsTemplates = async function() {
+export const preloadModifiedTidy5eHandlebarsTemplates = async function() {
 
   // Define template paths to load
   const modifiedTidy5etemplatePaths = [
