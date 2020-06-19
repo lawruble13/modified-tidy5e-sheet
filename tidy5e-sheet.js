@@ -193,6 +193,66 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			console.log("Adding new skill...");
 			let actor = this.actor;
 			console.log(actor);
+			let c = `
+			<form id="add-ability" autocomplete="off" onsubmit="event.preventDefault();">
+				<div class="form-group">
+					<label>Skill Name</label>
+					<input type="text" name="name" placeholder="Skill name (e.g. Investigation)">
+				</div>
+				<div class="form-group">
+					<label>Base Ability</label>
+					<select name="abl">
+			`;
+			for (let short in CONFIG.DND5E.abilities){
+				c += `<option value="${short}">${CONFIG.DND5E.abilities[short]}</option>`;
+			}
+			c += `
+					</select>
+				</div>
+			</form>
+			`
+			let d = new Dialog({
+				title: "Add Ability",
+				content: c,
+				buttons: {
+					confirm: {
+						icon: '<i class="fas fa-check"></i>',
+						label: "Add",
+						callback: async (html) => {
+							let name = html.find('input[name="name"]')[0].value;
+							let abr = name.substr(0,3);
+							let s = html.find('select[name="abl"]')[0].value;
+							let k = "data.skills." + abr;
+							let d={};
+							d[k] = {
+								"ability": s,
+								"bonus": 0,
+								"mod": 0,
+								"passive": 10,
+								"prof": 0,
+								"total": 0,
+								"value": 0
+							};
+							if(actor.data.data.hasOwnProperty("xskills")){
+								d["data.xskills"] = actor.data.data.xskills;
+							} else {
+								d["data.xskills"] = {};
+							}
+
+							d["data.xskills."+abr]=name;
+							CONFIG.DND5E.skills[abr]=name;
+							await actor.update(d);
+						}
+					},
+					cancel: {
+						icon: '<i class="fas fa-times"></i>',
+						label: "Cancel",
+						callback: () => console.log("Cancelled adding sanity.")
+					},
+				},
+				default: 'cancel'
+			});
+			d.render(true);
 			console.log("Done adding new skill.");
 		})
 	}
@@ -295,11 +355,16 @@ async function hidePortraitButtons(app, html, data){
 	}
 }
 
-async function updateExtraAbilityNames(){
+async function updateExtraNames(){
 	for (let actor of game.actors._source){
 		if(actor.data.hasOwnProperty("xabilities")){
 			for (let short in actor.data.xabilities){
 				CONFIG.DND5E.abilities[short] = actor.data.xabilities[short];
+			}
+		}
+		if(actor.data.hasOwnProperty("xskills")){
+			for(let abr in actor.data.xskills){
+				CONFIG.DND5E.skills[abr] = actor.data.xskills[abr];
 			}
 		}
 	}
@@ -375,7 +440,7 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	setSheetClasses(app, html, data);
 	checkDeathSaveStatus(app, html, data);
 	hidePortraitButtons(app, html, data);
-	updateExtraAbilityNames();
+	updateExtraNames();
 	// console.log(data);
 });
 
@@ -449,5 +514,5 @@ Hooks.once("ready", () => {
 		default: false,
 		type: Boolean
 	});
-	updateExtraAbilityNames();
+	updateExtraNames();
 });
