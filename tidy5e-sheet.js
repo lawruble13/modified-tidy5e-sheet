@@ -145,7 +145,11 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 					<div class="form-group">
 						<label>Long Ability Name</label>
 						<input type="text" name="long" placeholder="Long name (e.g. Wisdom)">
-						<p class="notes">Specify the name of the new ability. The first three letters are the short form, and must be unique.</p>
+					</div>
+					<div class="form-group">
+						<label>Short Ability Name</label>
+						<input type="text" name="short" placeholder="Short name (e.g. Win)">
+						<p class="notes">Specify the name of the new ability</p>
 					</div>
 				</form>
 				`,
@@ -189,6 +193,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			});
 			d.render(true);
 		});
+	}
 }
 
 // Migrate Traits to default dnd5e data
