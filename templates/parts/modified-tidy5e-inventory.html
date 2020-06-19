@@ -5,7 +5,7 @@
     <li class="filter-item" data-filter="bonus">{{localize "DND5E.BonusAction"}}</li>
     <li class="filter-item" data-filter="reaction">{{localize "DND5E.Reaction"}}</li>
     <li class="filter-item" data-filter="equipped">{{localize "DND5E.Equipped"}}{{#if equippedItems}} ({{equippedItems}}){{/if}}</li>
-    <li class="tidy5e-delete-lock"><label for="tidy5e-allow-delete" class="tidy5e-delete-toggle"><span class="tidy5e-delete-disabled" title="show item delete button"><i class="fas fa-lock"></i>Delete disabled</span><span class="tidy5e-delete-enabled" title="hide item delete button"><i class="fas fa-unlock"></i>Delete enabled</span></label></li>
+    <li class="modified-tidy5e-delete-lock"><label for="modified-tidy5e-allow-delete" class="modified-tidy5e-delete-toggle"><span class="modified-tidy5e-delete-disabled" title="show item delete button"><i class="fas fa-lock"></i>Delete disabled</span><span class="modified-tidy5e-delete-enabled" title="hide item delete button"><i class="fas fa-unlock"></i>Delete enabled</span></label></li>
   </ul>
 </div>
 
@@ -49,7 +49,7 @@
       </div>
 
 
-      {{~#if item.data.attuned}} 
+      {{~#if item.data.attuned}}
       <div class="item-attuned" title={{localize "DND5E.Attuned"}}>A</div>
       {{/if}}
 
@@ -99,7 +99,7 @@
 </ol>
 
 {{#if isCharacter}}
-<div class="inventory-currency">  
+<div class="inventory-currency">
   <ol class="currency flexrow">
     <li class="currency-header flexrow" title="{{localize "DND5E.Currency"}}">
       <i class="fas fa-coins"></i>

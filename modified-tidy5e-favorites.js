@@ -1,16 +1,16 @@
 /*
-* This file and its functions are 
-* adapted for the Tidy5eSheet from 
-* FavTab Module version 0.5.4 
-* by Felix Müller aka syl3r96 
+* This file and its functions are
+* adapted for the ModifiedTidy5eSheet from
+* FavTab Module version 0.5.4
+* by Felix Mï¿½ller aka syl3r96
 * (Felix#6196 on Discord).
 *
-* It is licensed under a 
-* Creative Commons Attribution 4.0 International License 
+* It is licensed under a
+* Creative Commons Attribution 4.0 International License
 * and can be found at https://github.com/syl3r86/favtab.
 */
 export const addFavorites = async function(app, html, data, position) {
-  
+
   let StoredPosition = position;
 
   // creating the favourite tab and loading favourited items
@@ -35,7 +35,7 @@ export const addFavorites = async function(app, html, data, position) {
       max: data.actor.data.spells.pact.max
     }
   };
-  let favSpells = { 
+  let favSpells = {
     0: {
       isCantrip: true,
       spells: []
@@ -77,7 +77,7 @@ export const addFavorites = async function(app, html, data, position) {
       max: data.actor.data.spells.spell9.max
     }
   }
-  
+
   let spellCount = 0
   let spellPrepModeCount = 0
   let items = data.actor.items;
@@ -165,7 +165,7 @@ export const addFavorites = async function(app, html, data, position) {
           }
 
           item.favLabels = labels;
-          
+
           item.editable = app.options.editable;
           switch (item.type) {
             case 'feat':
@@ -221,8 +221,8 @@ export const addFavorites = async function(app, html, data, position) {
       data.favSpells = spellCount > 0 ? favSpells : false;
       data.editable = app.options.editable;
 
-      await loadTemplates(['modules/tidy5e-sheet/templates/favorites/item.hbs']);
-      let favHtml = $(await renderTemplate('modules/tidy5e-sheet/templates/favorites/template.hbs', data));
+      await loadTemplates(['modules/modified-tidy5e-sheet/templates/favorites/item.hbs']);
+      let favHtml = $(await renderTemplate('modules/modified-tidy5e-sheet/templates/favorites/template.hbs', data));
 
       // Activating favorite-list events
 
@@ -348,5 +348,5 @@ export const addFavorites = async function(app, html, data, position) {
       $('.tab.attributes').scrollTop(position);
     }
 
-    Hooks.callAll("renderedTidy5eSheet", app, html, data);
+    Hooks.callAll("renderedModifiedTidy5eSheet", app, html, data);
   }

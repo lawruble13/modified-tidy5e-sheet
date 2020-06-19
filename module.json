@@ -1,25 +1,25 @@
 {
-	"name": "tidy5e-sheet",
-	"title": "Tidy5e Sheet",
-	"description": "Replaces the default D&D 5e character sheet with an alternate layout focused on a cleaner UI",
+	"name": "modified-tidy5e-sheet",
+	"title": "Modified Tidy 5E Sheet",
+	"description": "Replaces the default D&D 5e character sheet with an alternate layout focused on a cleaner UI. Modified so arbitrary skills and abilities can be added.",
 	"version": "0.1.12",
-	"author": "sdenec#3813",
+	"author": "lawruble13",
 	"minimumCoreVersion": "0.6.0",
 	"compatibleCoreVersion": "0.6.2",
 	"systems": ["dnd5e"],
 	"esmodules": [
-		"tidy5e-sheet.js",	
-		"tidy5e-favorites.js"
+		"modified-tidy5e-sheet.js",
+		"modified-tidy5e-favorites.js"
 	],
 	"styles": [
-		"styles/tidy5e-sheet.css",
-		"styles/tidy5e-items.css",
-		"styles/tidy5e-modules.css",
-		"styles/darkmode/tidy5e-darksheet.css",
-		"styles/darkmode/tidy5e-darkitems.css",
-		"styles/darkmode/tidy5e-darkmodules.css"
+		"styles/modified-tidy5e-sheet.css",
+		"styles/modified-tidy5e-items.css",
+		"styles/modified-tidy5e-modules.css",
+		"styles/darkmode/modified-tidy5e-darksheet.css",
+		"styles/darkmode/modified-tidy5e-darkitems.css",
+		"styles/darkmode/modified-tidy5e-darkmodules.css"
 	],
-  "url": "https://github.com/sdenec/tidy5e-sheet",
-  "manifest": "https://raw.githubusercontent.com/sdenec/tidy5e-sheet/master/module.json",
-  "download": "https://github.com/sdenec/tidy5e-sheet/raw/master/tidy5e-sheet.zip"
+  "url": "https://github.com/lawruble13/modified-tidy5e-sheet",
+  "manifest": "https://raw.githubusercontent.com/lawruble13/modified-tidy5e-sheet/master/module.json",
+  "download": "https://github.com/lawruble13/modified-tidy5e-sheet/raw/master/modified-tidy5e-sheet.zip"
 }

@@ -1,0 +1,140 @@
+/* ------------------------------------ */
+/*   Support Better Rolls / Minor QOL   */
+/* ------------------------------------ */
+
+.modified-tidy5eDark .modified-tidy5e.sheet.actor .inventory-list .item-summary .item-buttons .tag button:hover {
+	background: var(--darkmode-primary-accent);
+}
+
+/* ------------------------ */
+/* Support Dynamic Effects  */
+/* ------------------------ */
+.modified-tidy5eDark .dnd5e.sheet.item .effect-header:first-child,
+.modified-tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-name,
+.modified-tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-mode,
+.modified-tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-value,
+.modified-tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-controls {
+	color: var(--darkmode-primary-color);
+  font-weight: 400;
+}
+
+.modified-tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header,
+.modified-tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-name,
+.modified-tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-controls {
+	color: var(--darkmode-tertiary-color);
+}
+
+.modified-tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect {
+	background: var(--darkmode-faint-color);
+}
+
+.modified-tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect .effect-name {
+	cursor: default;
+}
+
+.modified-tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-create {
+	background: var(--darkmode-light-color);
+}
+
+.modified-tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-create:hover {
+	background: var(--darkmode-primary-accent);
+}
+
+.modified-tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-edit:hover {
+	color: var(--darkmode-primary-accent);
+}
+
+.modified-tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-delete {
+	color: var(--danger-500);
+}
+
+.modified-tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-controls .effect-delete:hover {
+	color: var(--danger-700);
+}
+/* ------------------------ */
+/*    Support Magic Items   */
+/* ------------------------ */
+.modified-tidy5eDark .modified-tidy5e.sheet.actor .magic-items-feats-content .spellbook-filters.magic-items-head,
+.modified-tidy5eDark .modified-tidy5e.sheet.actor .magic-items-spells-content .spellbook-filters.magic-items-head {
+  border-color: var(--darkmode-light-color);
+}
+
+.modified-tidy5eDark .modified-tidy5e.sheet.actor .magic-items-feats-content .magic-item div,
+.modified-tidy5eDark .modified-tidy5e.sheet.actor .magic-items-spells-content .magic-item div {
+  border-color: var(--darkmode-faint-color);
+}
+
+.modified-tidy5eDark .dnd5e.sheet.actor .spell-rechargeable,
+.modified-tidy5eDark .dnd5e.sheet.actor .spell-level,
+.modified-tidy5eDark .dnd5e.sheet.actor .spell-consumption,
+.modified-tidy5eDark .dnd5e.sheet.actor .spell-upcast {
+  color: var(--darkmode-primary-color);
+  font-weight: 300;
+}
+
+.modified-tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-mode,
+.modified-tidy5eDark .dnd5e.sheet.item .dynamiceffects-effect-list .effect-header .effect-value {
+	color: var(--darkmode-primary-color):;
+}
+
+.modified-tidy5eDark .modified-tidy5e.sheet.actor .magic-items-feats-content .item-name:hover .magic-item-image,
+.modified-tidy5eDark .modified-tidy5e.sheet.actor .magic-items-spells-content .item-name:hover .magic-item-image {
+  background-image: url(../../images/d20-444.svg) !important;
+}
+
+.modified-tidy5eDark .modified-tidy5e.sheet.actor .magic-items-feats-content .item-name:hover .magic-item-image:hover,
+.modified-tidy5eDark .modified-tidy5e.sheet.actor .magic-items-spells-content .item-name:hover .magic-item-image:hover {
+  background-image: url(../../images/d20-highlight-green.svg) !important;
+}
+
+/* Magic Item Sheet */
+
+.modified-tidy5eDark .dnd5e.sheet.item .sheet-body .tab.magic-items label {
+	color: var(--darkmode-primary-color);
+  font-weight: 300;
+}
+
+.modified-tidy5eDark .dnd5e.sheet.item .magic-items-content input[type="text"],
+.modified-tidy5eDark .dnd5e.sheet.item .magic-items-content select {
+	border: none !important;
+	background: var(--darkmode-faint-color);
+	color: var(--darkmode-primary-color);
+}
+
+.modified-tidy5eDark .dnd5e.sheet.item .magic-items-content input[type="text"]:hover,
+.modified-tidy5eDark .dnd5e.sheet.item .magic-items-content select:hover,
+.modified-tidy5eDark .dnd5e.sheet.item .magic-items-content select:focus {
+	border: none !important;
+	box-shadow: 0 0 0 1px var(--darkmode-primary-accent);
+}
+
+.modified-tidy5eDark .dnd5e.sheet.item .magic-item-list .item:not(.inventory-header) {
+	background: var(--darkmode-faint-color);
+	color: var(--darkmode-primary-color);
+}
+
+.modified-tidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-level,
+.modified-tidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-consumption,
+.modified-tidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-upcast,
+.modified-tidy5eDark .dnd5e.sheet.item .magic-item-list .item .spell-cost {
+	color: var(--darkmode-primary-color);
+}
+
+.modified-tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header:first-child,
+.modified-tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .item-name,
+.modified-tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-level-head,
+.modified-tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-consumption-head,
+.modified-tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-upcast-head,
+.modified-tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-cost-head,
+.modified-tidy5eDark .dnd5e.sheet.item .magic-item-list .inventory-header .spell-constrols-head {
+	color: var(--darkmode-tertiary-color);
+	font-weight: 400;
+}
+
+.modified-tidy5eDark .dnd5e.sheet.item .magic-item-list .item-controls a {
+	color: var(--danger-500);
+}
+
+.modified-tidy5eDark .dnd5e.sheet.item .magic-item-list .item-controls a:hover {
+	color: var(--danger-700);
+}
