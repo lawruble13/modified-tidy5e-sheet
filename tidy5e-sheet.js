@@ -8,12 +8,12 @@ import { addFavorites } from "./tidy5e-favorites.js";
 let scrollPos = 0;
 
 export class Tidy5eSheet extends ActorSheet5eCharacter {
-	
+
 	get template() {
 		if ( !game.user.isGM && this.actor.limited ) return "modules/tidy5e-sheet/templates/tidy5e-sheet-ltd.html";
 		return "modules/tidy5e-sheet/templates/tidy5e-sheet.html";
 	}
-	
+
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
 			classes: ["tidy5e", "dnd5e", "sheet", "actor", "character"],
@@ -22,7 +22,7 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
 			height: 720
 		});
 	}
-	
+
 	_createEditor(target, editorOptions, initialContent) {
 		editorOptions.min_height = 200;
 		super._createEditor(target, editorOptions, initialContent);
@@ -135,7 +135,60 @@ export class Tidy5eSheet extends ActorSheet5eCharacter {
       actor.getOwnedItem(itemId).update(data);
     });
 
-	}
+		html.find('.new-ability').click(async (event) => {
+		event.preventDefault();
+			let actor=this.actor;
+			let d = new Dialog({
+				title: "Add Ability",
+				content: `
+				<form id="add-ability" autocomplete="off" onsubmit="event.preventDefault();">
+					<div class="form-group">
+						<label>Long Ability Name</label>
+						<input type="text" name="long" placeholder="Long name (e.g. Wisdom)">
+						<p class="notes">Specify the name of the new ability. The first three letters are the short form, and must be unique.</p>
+					</div>
+				</form>
+				`,
+				buttons: {
+					confirm: {
+						icon: '<i class="fas fa-check"></i>',
+						label: "Add",
+						callback: async (html) => {
+							let s = html.find('input[name="short"]')[0].value;
+							s = s.toLowerCase();
+							let l = html.find('input[name="long"]')[0].value;
+							let k = "data.abilities." + s;
+							let d={};
+							d[k] = {
+								"checkBonus": 0,
+								"mod": 0,
+								"prof": 0,
+								"proficient": 0,
+								"save": 0,
+								"saveBonus": 0,
+								"value": 10
+							};
+							if(actor.data.data.hasOwnProperty("xabilities")){
+								d["data.xabilities"] = actor.data.data.xabilities;
+							} else {
+								d["data.xabilities"] = {};
+							}
+
+							d["data.xabilities."+s]=l;
+							CONFIG.DND5E.abilities[s]=l;
+							await actor.update(d);
+						}
+					},
+					cancel: {
+						icon: '<i class="fas fa-times"></i>',
+						label: "Cancel",
+						callback: () => console.log("Cancelled adding sanity.")
+					},
+				},
+				default: 'cancel'
+			});
+			d.render(true);
+		});
 }
 
 // Migrate Traits to default dnd5e data
@@ -143,7 +196,7 @@ async function migrateTraits(app, html, data) {
 	let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
 
 	if (!actor.getFlag('tidy5e-sheet', 'useCoreTraits')){
-	
+
 		console.log('Tidy5e Sheet | Data needs migration! Migrating.');
 
 		let coreTrait = (actor.data.data.details.trait !== '') ? actor.data.data.details.trait+"<br>Migrated Content:" : '';
@@ -189,7 +242,7 @@ async function checkDeathSaveStatus(app, html, data){
 	}
 }
 
-async function addClassList(app, html, data) { 
+async function addClassList(app, html, data) {
 	if (!game.settings.get("tidy5e-sheet", "hideClassList")) {
 		let actor = game.actors.entities.find(a => a.data._id === data.actor._id);
 		let classList = [];
@@ -232,6 +285,16 @@ async function hidePortraitButtons(app, html, data){
 	}
 	if (game.settings.get("tidy5e-sheet", "inspirationOnHover")) {
 		html.find('.tidy5e-sheet .profile').addClass('inspirationOnHover');
+	}
+}
+
+async function updateExtraAbilityNames(){
+	for (let actor of game.actors._source){
+		if(actor.data.hasOwnProperty("xabilities")){
+			for (let short in actor.data.xabilities){
+				CONFIG.DND5E.abilities[short] = actor.data.xabilities[short];
+			}
+		}
 	}
 }
 
@@ -288,7 +351,7 @@ Hooks.once("init", () => {
   	document.documentElement.style.setProperty('--darkmode-primary-accent',primaryAccentColor);
   }
   if(useDarkMode === true && secondaryAccentColor !==  '') {
-   	document.documentElement.style.setProperty('--darkmode-secondary-accent',secondaryAccentColor);	
+   	document.documentElement.style.setProperty('--darkmode-secondary-accent',secondaryAccentColor);
   }
 });
 
@@ -305,15 +368,16 @@ Hooks.on("renderTidy5eSheet", (app, html, data) => {
 	setSheetClasses(app, html, data);
 	checkDeathSaveStatus(app, html, data);
 	hidePortraitButtons(app, html, data);
+	updateExtraAbilityNames();
 	// console.log(data);
 });
 
 Hooks.once("ready", () => {
-	
+
 	if (window.BetterRolls) {
 	  window.BetterRolls.hooks.addActorSheet("Tidy5eSheet");
 	}
-	
+
 	game.settings.register("tidy5e-sheet", "useRoundPortraits", {
 		name: "Character sheet uses round portraits.",
 		hint: "You should check this if you use round portraits. It will adapt the hp overlay and portait buttons to make it look nicer. Also looks nice on square portraits without a custom frame.",
@@ -378,4 +442,5 @@ Hooks.once("ready", () => {
 		default: false,
 		type: Boolean
 	});
+	updateExtraAbilityNames();
 });

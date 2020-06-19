@@ -26,7 +26,7 @@
 
 .tidy5e.sheet [contenteditable=true] {
 	border: none;
-	outline: none; 
+	outline: none;
 	display: inline-block;
 	border-radius: 3px;
 	-moz-user-select: text;
@@ -74,7 +74,7 @@
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	overflow: hidden; 
+	overflow: hidden;
 }
 
 .tidy5e.sheet img,
@@ -103,7 +103,7 @@
 	cursor: pointer;
 	box-shadow: none;
 }
- 
+
 .tidy5e.sheet [contenteditable=true],
 .tidy5e.sheet input[type="text"]{
 	border: none;
@@ -268,13 +268,13 @@
 }
 
 .tidy5e .profile.hp-0 .death-saves,
-.tidy5e .profile:not(.deathfailure-0):not(.deathfailure-) .death-saves, 
+.tidy5e .profile:not(.deathfailure-0):not(.deathfailure-) .death-saves,
 .tidy5e .profile:not(.deathsuccess-0):not(.deathsuccess-) .death-saves {
 	display: flex;
 }
 
 .tidy5e .profile.disable-hp-overlay .counter-value,
-.tidy5e .profile:not(.deathfailure-0):not(.hp-0) .counter-value, 
+.tidy5e .profile:not(.deathfailure-0):not(.hp-0) .counter-value,
 .tidy5e .profile:not(.deathsuccess-0):not(.hp-0) .counter-value {
 	background: rgba(255,0,0,.3);
 	padding: 0 .5rem;
@@ -282,7 +282,7 @@
 }
 
 .tidy5e .profile.disable-hp-overlay .counter-value,
-.tidy5e .profile.disable-hp-overlay:not(.deathfailure-0):not(.hp-0) .counter-value, 
+.tidy5e .profile.disable-hp-overlay:not(.deathfailure-0):not(.hp-0) .counter-value,
 .tidy5e .profile.disable-hp-overlay:not(.deathsuccess-0):not(.hp-0) .counter-value {
 	background: rgba(255,0,0,.5);
 }
@@ -331,10 +331,10 @@
 }
 
 /* Inspiration & Rest */
-.tidy5e .profile:not(.deathfailure-0):not(.deathfailure-) .inspiration, 
+.tidy5e .profile:not(.deathfailure-0):not(.deathfailure-) .inspiration,
 .tidy5e .profile:not(.deathsuccess-0):not(.deathsuccess-) .inspiration,
-.tidy5e .profile:not(.deathfailure-0):not(.deathfailure-) .rest-container, 
-.tidy5e .profile:not(.deathsuccess-0):not(.deathsuccess-) .rest-container, 
+.tidy5e .profile:not(.deathfailure-0):not(.deathfailure-) .rest-container,
+.tidy5e .profile:not(.deathsuccess-0):not(.deathsuccess-) .rest-container,
 .tidy5e .hp-0 .inspiration,
 .tidy5e .hp-0 .rest-container {
 	display: none;
@@ -450,7 +450,7 @@
 }
 
 .tidy5e .resting-icon {
-	flex: 0 0 38px; 
+	flex: 0 0 38px;
 	display: flex;
 	width: 38px;
 	height: 38px;
@@ -463,7 +463,7 @@
 
 
 .tidy5e .resting .rest {
-	flex: 0 0 35px; 
+	flex: 0 0 35px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -478,7 +478,7 @@
 }
 
 .tidy5e .resting .rest i {
-	transition: color .3s ease, transform .3s ease;	
+	transition: color .3s ease, transform .3s ease;
 }
 
 .tidy5e .resting .rest:hover i {
@@ -565,7 +565,7 @@
 	height: 16px;
 	text-align: right;
 	padding: 2px .15rem 0 .15rem;
-	margin-bottom: -1px; 
+	margin-bottom: -1px;
 }
 
 .tidy5e .max-xp {
@@ -811,7 +811,7 @@
 .tidy5e.sheet .window-content .tab.biography,
 .tidy5e.sheet .window-content .tab.journal {
 	padding-right: .75rem;
-	overflow: auto; 
+	overflow: auto;
 }
 
 /* Ability Scores */
@@ -823,7 +823,7 @@
   border: 1px solid var(--default-faint-color);
   border-radius: 5px;
   overflow: hidden;
-  height: 432px;
+  height: unset; /*432px;*/
 }
 
 .tidy5e.sheet.actor .ability-scores .ability {
@@ -889,6 +889,18 @@
 	border-radius: 50% 0 0 0;
 }
 
+.tidy5e.sheet.actor .ability-scores .ability.add-ability {
+  flex: 0;
+}
+
+.tidy5e.sheet.actor .ability-scores .ability .new-ability {
+	font-size: 16px;
+	border-top: 1px solid var(--default-faint-color);
+	padding: 2px 0;
+	margin: 0;
+  width: 100%;
+}
+
 /* Skill List */
 
 .tidy5e.sheet.actor.character ul.skills-list {
@@ -900,7 +912,7 @@
   flex: 0 0 215px;
   display: flex;
   flex-direction: column;
-  height: 432px;
+  height: min-content;
 }
 
 .tidy5e.sheet.actor.character ul.skills-list li.skill {
@@ -970,12 +982,12 @@
 }
 
 .tidy5e.sheet.actor .center-pane ul.attributes li.attribute:nth-child(3n+1) {
-	border-left: 0; 
+	border-left: 0;
 }
 
 .tidy5e.sheet.actor .center-pane ul.attributes li.attribute:nth-child(-n+3) {
 	border-top: 0;
-	margin-bottom: 0; 
+	margin-bottom: 0;
 	padding-top: 0;
 }
 
@@ -1010,12 +1022,12 @@
 	border-radius: 5px;
 }
 
-.tidy5e.sheet.actor ul.attributes li.attribute .attribute-header:hover { 
+.tidy5e.sheet.actor ul.attributes li.attribute .attribute-header:hover {
 	width: 100%;
 	height: 100%;
 }
 
-.tidy5e.sheet.actor ul.attributes li.attribute .attribute-header:hover ~ * { 
+.tidy5e.sheet.actor ul.attributes li.attribute .attribute-header:hover ~ * {
 	opacity: 0;
 }
 
@@ -1125,12 +1137,12 @@
 	color: rgba(0,0,0,.6);
 }
 
-.tidy5e.sheet.actor .traits-toggle h4, 
+.tidy5e.sheet.actor .traits-toggle h4,
 .tidy5e.sheet.actor .favorites-toggle h4{
 	margin: 0;
 }
 
-.tidy5e.sheet.actor .traits-toggle i, 
+.tidy5e.sheet.actor .traits-toggle i,
 .tidy5e.sheet.actor .favorites-toggle i {
 	text-align: center;
 }
@@ -1163,7 +1175,7 @@
 
 .tidy5e.sheet.actor .traits .form-group,
 .tidy5e.sheet.actor .traits .form-group-stacked {
-	margin: 0; 
+	margin: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -1294,7 +1306,7 @@
 .tidy5e.sheet.actor .favorites {
 	border: 1px solid var(--default-faint-color);
 	border-radius: 5px;
-	overflow: hidden; 
+	overflow: hidden;
 }
 
 .tidy5e.sheet.actor .item[data-tab="attributes"] i {
@@ -1487,8 +1499,8 @@
 
 /* Exhaustion Portrait */
 
-.tidy5e .profile:not(.deathfailure-0):not(.deathfailure-) .exhaustion-container, 
-.tidy5e .profile:not(.deathsuccess-0):not(.deathsuccess-) .exhaustion-container, 
+.tidy5e .profile:not(.deathfailure-0):not(.deathfailure-) .exhaustion-container,
+.tidy5e .profile:not(.deathsuccess-0):not(.deathsuccess-) .exhaustion-container,
 .tidy5e .hp-0 .exhaustion-container {
 	display: none;
 }
@@ -1531,7 +1543,7 @@
 .tidy5e .exhaustion {
 	height: 40px;
 	width: 40px;
-	overflow: hidden; 
+	overflow: hidden;
   border-radius: 5px 0 5px 0;
   transition: width .3s ease;
   background: #ECE9DF;
@@ -1550,7 +1562,7 @@
 
 .tidy5e .exhaustion .exhaustion-icon {
 	display: block;
-	flex: 0 0 38px; 
+	flex: 0 0 38px;
 	width: 38px;
 	height: 38px;
 	line-height: 42px;
@@ -1688,7 +1700,7 @@
 
 .tidy5e.sheet .filter-list .filter-item {
   padding: 0 .5rem;
-  margin: 0; 
+  margin: 0;
   margin-left: 2px;
   flex: unset;
   cursor: pointer;
@@ -1786,7 +1798,7 @@
 }
 
 .tidy5e.sheet.actor .inventory-currency .currency-item label {
-	margin-left: .25rem;	
+	margin-left: .25rem;
 	flex: unset;
 }
 
@@ -1847,15 +1859,15 @@
 	padding-top: .5rem;
 	line-height: 20px;
 	background: transparent;
-	border: none; 
+	border: none;
 	border-top: 1px solid var(--default-faint-color);
 	font-family: "Signika", sans-serif;
 }
 
 .tidy5e.sheet.actor .inventory-list .inventory-header:first-child,
-.tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header:first-child { 
+.tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header:first-child {
 	padding-top: 0;
-	border: none; 
+	border: none;
 }
 
 .tidy5e.sheet.actor .inventory-list .inventory-header h3 {
@@ -1868,7 +1880,7 @@
 .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail,
 .tidy5e.sheet.actor .inventory-list .inventory-header.spellbook-header .spell-detail .slot-max-override i {
 	color: var(--default-tertiary-color);
-	border: none; 
+	border: none;
 }
 
 .tidy5e.sheet.actor .inventory-list .spell-school {
@@ -1903,8 +1915,8 @@
 	padding: 0;
 	line-height: 30px;
 	background: var(--default-faint-color);
-	border: none; 
-	border-radius: 5px; 
+	border: none;
+	border-radius: 5px;
 	margin: 2px 0;
 }
 
@@ -1912,13 +1924,13 @@
 	flex: 0 0 16px;
 	width: 16px;
 	height: 16px;
-	border-radius: 50%; 
+	border-radius: 50%;
 	font-size: 11px;
 	line-height: 16px;
 	text-align: center;
 	font-weight: 700;
 	margin: 7px 0;
-	background: rgba(0,0,0,.6); 
+	background: rgba(0,0,0,.6);
 	color: rgba(255,255,255,.6);
 }
 
@@ -2018,7 +2030,7 @@
 }
 
 .tidy5e.sheet.actor .inventory-list .item .item-name .item-image {
-	flex: unset; 
+	flex: unset;
 	width: 30px;
 	height: 30px;
 	background-repeat: no-repeat;
@@ -2138,7 +2150,7 @@
 	flex: 0 0 16px;
 	margin: 0 .25rem;
 }
- 
+
 .tidy5e.sheet.actor.character .inventory .item-equipped .item-toggle,
 .tidy5e.sheet.actor.character .spellbook .spell-prepared .item-toggle {
 	color: rgba(0,0,0,.25);
