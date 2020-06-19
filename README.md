@@ -6,7 +6,7 @@ This is an extension of the Tidy5e Sheet module. Differences are:
 * Items can now add or subtract from the modifier for a skill check while equipped
 * Items can now use hit dice as a resource
 
-As of yet, ALL links, code, licenses, etc. have NOT been changed to reflect that this is a fork of sdenec's Tidy5e module. This will be done shortly.
+As of yet, MOST links, code, licenses, etc. have NOT been changed to reflect that this is a fork of sdenec's Tidy5e module. This will be done shortly.
 
 # Tidy5e Sheet
 An alternative Character Sheet for Foundry VTT dnd5e aimed at creating a cleaner UI.
@@ -15,7 +15,7 @@ An alternative Character Sheet for Foundry VTT dnd5e aimed at creating a cleaner
 ![Tidy5e Sheet Preview](/preview/modified-tidy5e_0-1-5_preview.gif)
 
 ## Installation
-See https://github.com/foundry-vtt-community/wiki/wiki/Modules#installing-modules. Open the Add-on Modules tab in the Configuration and Setup dialog. Click Install Module, paste https://raw.githubusercontent.com/sdenec/modified-tidy5e-sheet/master/module.json in as the Manifest URL, then click Install.
+See https://github.com/foundry-vtt-community/wiki/wiki/Modules#installing-modules. Open the Add-on Modules tab in the Configuration and Setup dialog. Click Install Module, paste https://raw.githubusercontent.com/lawruble13/modified-tidy5e-sheet/master/module.json in as the Manifest URL, then click Install.
 
 ### Settings
 In the `Configure Settings` menu for your world under `Module Settings` you can chose your prefered settings. Round Portraits and Hit Point Overlay Border can only be set by the DM for a consistent use of Portraits.
